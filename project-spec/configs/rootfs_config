@@ -167,7 +167,7 @@ CONFIG_haveged=y
 #
 # i2c-tools 
 #
-# CONFIG_i2c-tools is not set
+CONFIG_i2c-tools=y
 # CONFIG_i2c-tools-dev is not set
 # CONFIG_i2c-tools-misc is not set
 # CONFIG_i2c-tools-dbg is not set
@@ -317,7 +317,7 @@ CONFIG_mtd-utils=y
 #
 # tar 
 #
-# CONFIG_tar is not set
+CONFIG_tar=y
 # CONFIG_tar-dev is not set
 # CONFIG_tar-dbg is not set
 # CONFIG_tar-rmt is not set
@@ -3553,7 +3553,7 @@ CONFIG_bridge-utils=y
 #
 # tcpdump 
 #
-# CONFIG_tcpdump is not set
+CONFIG_tcpdump=y
 # CONFIG_tcpdump-dev is not set
 # CONFIG_tcpdump-dbg is not set
 
@@ -3568,8 +3568,8 @@ CONFIG_bridge-utils=y
 # CONFIG_libavahi-glib is not set
 # CONFIG_avahi-utils is not set
 # CONFIG_libavahi-common is not set
-# CONFIG_avahi-dnsconfd is not set
-# CONFIG_avahi-daemon is not set
+CONFIG_avahi-dnsconfd=y
+CONFIG_avahi-daemon=y
 # CONFIG_avahi-autoipd is not set
 # CONFIG_libavahi-gobject is not set
 # CONFIG_libavahi-core is not set
@@ -4168,7 +4168,7 @@ CONFIG_auto-login=y
 # apps 
 #
 # CONFIG_gpio-demo is not set
-# CONFIG_peekpoke is not set
+CONFIG_peekpoke=y
 
 #
 # user packages 

@@ -861,6 +861,33 @@ unsigned long psu_clock_init_data(void)
     * CLOCK CONTROL SLCR REGISTER
     */
     /*
+    * Register : GEM0_REF_CTRL @ 0XFF5E0050
+
+    * Clock active for the RX channel
+    *  PSU_CRL_APB_GEM0_REF_CTRL_RX_CLKACT                         0x1
+
+    * Clock active signal. Switch to 0 to disable the clock
+    *  PSU_CRL_APB_GEM0_REF_CTRL_CLKACT                            0x1
+
+    * 6 bit divider
+    *  PSU_CRL_APB_GEM0_REF_CTRL_DIVISOR1                          0x1
+
+    * 6 bit divider
+    *  PSU_CRL_APB_GEM0_REF_CTRL_DIVISOR0                          0xc
+
+    * 000 = IOPLL; 010 = RPLL; 011 = DPLL; (This signal may only be toggled af
+    * ter 4 cycles of the old clock and 4 cycles of the new clock. This is not
+    *  usually an issue, but designers must be aware.)
+    *  PSU_CRL_APB_GEM0_REF_CTRL_SRCSEL                            0x0
+
+    * This register controls this reference clock
+    * (OFFSET, MASK, VALUE)      (0XFF5E0050, 0x063F3F07U ,0x06010C00U)
+    */
+	PSU_Mask_Write(CRL_APB_GEM0_REF_CTRL_OFFSET,
+		0x063F3F07U, 0x06010C00U);
+/*##################################################################### */
+
+    /*
     * Register : GEM3_REF_CTRL @ 0XFF5E005C
 
     * Clock active for the RX channel
@@ -885,6 +912,24 @@ unsigned long psu_clock_init_data(void)
     */
 	PSU_Mask_Write(CRL_APB_GEM3_REF_CTRL_OFFSET,
 		0x063F3F07U, 0x06010C00U);
+/*##################################################################### */
+
+    /*
+    * Register : GEM_CLK_CTRL @ 0XFF180308
+
+    * PLL or PHY source selection for gem0_ref_clk generation 0: PLL Reference
+    *  clock 1: FMIO PLL clock or GTX Clock
+    *  PSU_IOU_SLCR_GEM_CLK_CTRL_GEM0_REF_SRC_SEL                  0x1
+
+    * MIO or FMIO source selection for gem0_rx_clk generation 0: MIO clock 1:
+    * FMIO clock
+    *  PSU_IOU_SLCR_GEM_CLK_CTRL_GEM0_RX_SRC_SEL                   0x1
+
+    * SoC Debug Clock Control
+    * (OFFSET, MASK, VALUE)      (0XFF180308, 0x00000003U ,0x00000003U)
+    */
+	PSU_Mask_Write(IOU_SLCR_GEM_CLK_CTRL_OFFSET,
+		0x00000003U, 0x00000003U);
 /*##################################################################### */
 
     /*
@@ -16128,14 +16173,17 @@ unsigned long psu_peripherals_init_data(void)
     /*
     * Register : RST_LPD_IOU0 @ 0XFF5E0230
 
+    * GEM 0 reset
+    *  PSU_CRL_APB_RST_LPD_IOU0_GEM0_RESET                         0
+
     * GEM 3 reset
     *  PSU_CRL_APB_RST_LPD_IOU0_GEM3_RESET                         0
 
     * Software controlled reset for the GEMs
-    * (OFFSET, MASK, VALUE)      (0XFF5E0230, 0x00000008U ,0x00000000U)
+    * (OFFSET, MASK, VALUE)      (0XFF5E0230, 0x00000009U ,0x00000000U)
     */
 	PSU_Mask_Write(CRL_APB_RST_LPD_IOU0_OFFSET,
-		0x00000008U, 0x00000000U);
+		0x00000009U, 0x00000000U);
 /*##################################################################### */
 
     /*
@@ -20587,6 +20635,22 @@ unsigned long psu_resetout_init_data(void)
     /*
     * Register : RST_LPD_IOU0 @ 0XFF5E0230
 
+    * GEM 0 reset
+    *  PSU_CRL_APB_RST_LPD_IOU0_GEM0_RESET                         0X0
+
+    * Software controlled reset for the GEMs
+    * (OFFSET, MASK, VALUE)      (0XFF5E0230, 0x00000001U ,0x00000000U)
+    */
+	PSU_Mask_Write(CRL_APB_RST_LPD_IOU0_OFFSET,
+		0x00000001U, 0x00000000U);
+/*##################################################################### */
+
+    /*
+    * PUTTING GEM0 IN RESET
+    */
+    /*
+    * Register : RST_LPD_IOU0 @ 0XFF5E0230
+
     * GEM 3 reset
     *  PSU_CRL_APB_RST_LPD_IOU0_GEM3_RESET                         0X0
 
@@ -21987,6 +22051,22 @@ unsigned long psu_resetin_init_data(void)
     * (OFFSET, MASK, VALUE)      (0XFF5E023C, 0x00000540U ,0x00000540U)
     */
 	PSU_Mask_Write(CRL_APB_RST_LPD_TOP_OFFSET, 0x00000540U, 0x00000540U);
+/*##################################################################### */
+
+    /*
+    * PUTTING GEM0 IN RESET
+    */
+    /*
+    * Register : RST_LPD_IOU0 @ 0XFF5E0230
+
+    * GEM 0 reset
+    *  PSU_CRL_APB_RST_LPD_IOU0_GEM0_RESET                         0X1
+
+    * Software controlled reset for the GEMs
+    * (OFFSET, MASK, VALUE)      (0XFF5E0230, 0x00000001U ,0x00000001U)
+    */
+	PSU_Mask_Write(CRL_APB_RST_LPD_IOU0_OFFSET,
+		0x00000001U, 0x00000001U);
 /*##################################################################### */
 
     /*

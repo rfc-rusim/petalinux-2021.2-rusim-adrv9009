@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "NR5G RU: Setting up system, ready to run"
+

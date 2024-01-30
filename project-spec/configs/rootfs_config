@@ -4168,6 +4168,7 @@ CONFIG_auto-login=y
 # apps 
 #
 # CONFIG_gpio-demo is not set
+CONFIG_nr5g-ru-init=y
 CONFIG_peekpoke=y
 
 #

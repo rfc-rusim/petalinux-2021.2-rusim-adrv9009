@@ -1,0 +1,33 @@
+#!/bin/sh
+DAEMON=/usr/bin/nr5g-ru-config
+start ()
+{
+        echo " Starting nr5g-ru-init"
+        nr5g-ru-config
+        # start-stop-daemon -S -o --background -x $DAEMON
+}
+stop ()
+{
+        echo " Stoping nr5g-ru-init"
+        # start-stop-daemon -K -x $DAEMON
+}
+restart()
+{
+        stop
+        start
+}
+ 
+[ -e $DAEMON ] || exit 1
+ 
+        case "$1" in
+                start)
+                        start; ;;
+                stop)
+                        stop; ;;
+                restart)
+                        restart; ;;
+                *)
+                        echo "Usage: $0 {start|stop|restart}"
+                        exit 1
+        esac
+exit $?

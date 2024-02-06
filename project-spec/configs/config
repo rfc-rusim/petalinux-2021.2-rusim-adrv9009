@@ -278,8 +278,8 @@ CONFIG_DEVTOOL_WORKSPACE_LOCATION="${PROOT}/components/yocto/workspace"
 #
 # Parallel thread execution
 #
-CONFIG_YOCTO_BB_NUMBER_THREADS="16"
-CONFIG_YOCTO_PARALLEL_MAKE="16"
+CONFIG_YOCTO_BB_NUMBER_THREADS="20"
+CONFIG_YOCTO_PARALLEL_MAKE="20"
 
 #
 # Add pre-mirror url 
@@ -305,4 +305,5 @@ CONFIG_YOCTO_NETWORK_SSTATE_FEEDS_URL="http://petalinux.xilinx.com/sswreleases/r
 CONFIG_USER_LAYER_0="/home/petalinux/workspace-2021.2/meta-adi/meta-adi-core"
 CONFIG_USER_LAYER_1="/home/petalinux/workspace-2021.2/meta-adi/meta-adi-xilinx"
 CONFIG_USER_LAYER_2=""
+
 CONFIG_SUBSYSTEM_BOOTARGS_GENERATED=" earlycon console=ttyPS0,115200 clk_ignore_unused"

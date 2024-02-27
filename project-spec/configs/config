@@ -250,8 +250,8 @@ CONFIG_SUBSYSTEM_TFTPBOOT_DIR="/tftpboot"
 #
 # Firmware Version Configuration
 #
-CONFIG_SUBSYSTEM_HOSTNAME="petalinux-2021.2-rusim-adrv9009"
-CONFIG_SUBSYSTEM_PRODUCT="petalinux-2021.2-rusim-adrv9009"
+CONFIG_SUBSYSTEM_HOSTNAME="rusim-adrv9009"
+CONFIG_SUBSYSTEM_PRODUCT="rusim-adrv9009"
 CONFIG_SUBSYSTEM_FW_VERSION="1.00"
 
 #
@@ -278,8 +278,8 @@ CONFIG_DEVTOOL_WORKSPACE_LOCATION="${PROOT}/components/yocto/workspace"
 #
 # Parallel thread execution
 #
-CONFIG_YOCTO_BB_NUMBER_THREADS="3"
-CONFIG_YOCTO_PARALLEL_MAKE="3"
+CONFIG_YOCTO_BB_NUMBER_THREADS="20"
+CONFIG_YOCTO_PARALLEL_MAKE="20"
 
 #
 # Add pre-mirror url 
@@ -302,8 +302,7 @@ CONFIG_YOCTO_NETWORK_SSTATE_FEEDS_URL="http://petalinux.xilinx.com/sswreleases/r
 #
 # User Layers
 #
-CONFIG_USER_LAYER_0="/home/petalinux/linuxSpace0/adrv9009/fw-2021.2/meta-adi/meta-adi-core"
-CONFIG_USER_LAYER_1="/home/petalinux/linuxSpace0/adrv9009/fw-2021.2/meta-adi/meta-adi-xilinx"
+CONFIG_USER_LAYER_0="/home/petalinux/workspace-2021.2/meta-adi/meta-adi-core"
+CONFIG_USER_LAYER_1="/home/petalinux/workspace-2021.2/meta-adi/meta-adi-xilinx"
 CONFIG_USER_LAYER_2=""
-
 CONFIG_SUBSYSTEM_BOOTARGS_GENERATED=" earlycon console=ttyPS0,115200 clk_ignore_unused"

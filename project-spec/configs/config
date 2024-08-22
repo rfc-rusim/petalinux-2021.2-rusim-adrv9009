@@ -289,7 +289,7 @@ CONFIG_PRE_MIRROR_URL="http://petalinux.xilinx.com/sswreleases/rel-v${PETALINUX_
 #
 # Local sstate feeds settings
 #
-CONFIG_YOCTO_LOCAL_SSTATE_FEEDS_URL=""
+CONFIG_YOCTO_LOCAL_SSTATE_FEEDS_URL="/home/petalinux/workspace-2021.2/sstate_aarch64_2021.2/aarch64"
 CONFIG_YOCTO_NETWORK_SSTATE_FEEDS=y
 
 #
@@ -302,7 +302,7 @@ CONFIG_YOCTO_NETWORK_SSTATE_FEEDS_URL="http://petalinux.xilinx.com/sswreleases/r
 #
 # User Layers
 #
-CONFIG_USER_LAYER_0="/home/petalinux/workspace-2021.2/meta-adi/meta-adi-core"
-CONFIG_USER_LAYER_1="/home/petalinux/workspace-2021.2/meta-adi/meta-adi-xilinx"
+CONFIG_USER_LAYER_0="/home/petalinux/workspace-2021.2/petalinux-2021.2-rusim-adrv9009/project-spec/meta-adi/meta-adi-core"
+CONFIG_USER_LAYER_1="/home/petalinux/workspace-2021.2/petalinux-2021.2-rusim-adrv9009/project-spec/meta-adi/meta-adi-xilinx"
 CONFIG_USER_LAYER_2=""
 CONFIG_SUBSYSTEM_BOOTARGS_GENERATED=" earlycon console=ttyPS0,115200 clk_ignore_unused"

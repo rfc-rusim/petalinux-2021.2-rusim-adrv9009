@@ -1,0 +1,4 @@
+[submodule "project-spec/meta-adi"]
+	path = project-spec/meta-adi
+	url = git@github.com:vutang/meta-adi.git
+	branch = 2021_R2_V
